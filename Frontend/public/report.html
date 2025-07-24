@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="with=device-width,initial-scale=1.0">
+        <title>Garden Revival System</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="icon" type="image/x-icon" href="images/myLogo2.png">
+    </head>
+    <body>
+        <!-----------------------------body header------------------------------------------------->
+        <div class="cl1">
+        <section class="sub-header">
+            <nav class="font-awesome">
+                <a href="index.html"><img src="images/mylogo2.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="live.html">LIVE</a></li>
+                        <li><a href="report.html">REPORT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                <span class="space">
+                    <ul>
+                        <!-- <li><a href="login.html"class="hero-btn">Sign In</a></li> -->
+                        <!-- <li><a href="sigin.html" class="hero-btn">Sign Up</a></li> -->
+                    </ul>
+                </span>
+               <i class="fa fa-bars"onclick="showMenu()"></i>
+            </nav>
+            <h1>Reports</h1>
+        </section>
+        <!--------------------------------------------------Report content------------------------------------------------------------------>
+        <section class="blog-content">
+            <div class="row">
+                <div class="blog-left">
+                    <canvas id="barChart"></canvas> <!-- Bar Chart -->
+                    <!-------------------------------------Note box code start----------------------------------------->
+                    <div class="comment-box">
+                        <h3>Add Notes</h3>
+                        <form class="comment-form">
+                            <textarea rows="5" placeholder="Your Notes"></textarea>
+                            <button type="submit" class="hero-btn green-btn">Save notes</button>
+                        </form>
+                    </div>
+                    <!----------------------------------------comment box code end----------------------------------------->
+                </div>
+                <div class="blog-right">
+                    <canvas id="pieChart"></canvas> <!-- Pie Chart -->
+                </div>       
+            </div>
+        </section>
+        
+        <!-- ✅ Include Chart.js Library -->
+        
+        </div>
+     <!----------------------------------------right side box code end---------------------------------->
+        <!--------------------------------------------------------footer---------------------------------------->
+        <section class="footer">
+            <h4>About Us</h4>
+            <p>Welcome to Garden Revival System, where nature meets innovation. We are dedicated to<br> inspiring and
+                supporting individuals and communities in their journey to restore, protect, and nurture beautiful
+                gardens.<br> With a wealth of resources, expert guidance, and a passionate community, we provide the tools
+                you need to revive and sustain vibrant green spaces. <br>Join us in creating a greener, healthier world—one
+                garden at a time.</p>
+            <div class="icons">
+                <i class="fa fa-facebook"></i>
+                <i class="fa fa-twitter"></i>
+                <i class="fa fa-instagram"></i>
+                <i class="fa fa-linkedin"></i>
+            </div>
+            <p>Made with <i class="fa fa-heart"></i> by Green Guard</p>
+        </section>
+       <!------------------------------------------------javascript to togal menu start----------------------------------------------------------> 
+        <script>
+            var navLinks = document.getElementById("navLinks");
+            function showMenu(){
+                navLinks.style.right="0px";
+            }
+            function hideMenu(){
+                navLinks.style.right="-200px";
+            }
+        </script> 
+      <!------------------------------------------------javascript to togal menu end ----------------------------------------------------------> 
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script src="/charts.js"></script>       
+    </body>
+</html>

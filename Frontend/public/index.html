@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="with=device-width,initial-scale=1.0">
+    <title>Garden Revival System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="images/myLogo2.png">
+</head>
+
+<body>
+    <!-------------------------------body header------------------------------------------------------------->
+    <div class="cl">
+        <section class="header">
+            <nav class="headcolor">
+                <a href="index.html"><img src="images/mylogo2.png"></a>
+            
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li class="auth-only" style="display: none;"><a href="live.html">LIVE</a></li>
+                        <li class="auth-only" style="display: none;"><a href="report.html">REPORT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
+            
+                <span id="auth-buttons" class="space">
+                    <ul>
+                        <li><a href="login.html" class="hero-btn">Sign In</a></li>
+                        <li><a href="sigin.html" class="hero-btn">Sign Up</a></li>
+                    </ul>
+                </span>
+                <span id="logout-button" class="space" style="display: none;">
+                    <ul>
+                        <li><a href="#" onclick="logout()" class="hero-btn">Logout</a></li>
+                    </ul>
+                </span>
+                
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+            
+            <div class="tex-box">
+                <h1>Garden Revival System</h1>
+                <p>Where innovation meets greenery</p>
+                <a href="about.html" class="hero-btn">Visit us to know more </a>
+            </div>
+        </section>
+        <!-------------------------------- garden----------------------------------------------------->
+        <section class="garden">
+            <h1>Approach</h1>
+            <p>As a trusted authority in garden restoration and sustainable gardening practices, Garden Revival System
+                ensures gardeners and enthusiasts are equipped with the knowledge, tools, and resources needed to revive
+                and maintain flourishing gardens. </p>
+            <div class="row">
+                <div class="garden-col">
+                    <img src="Images/protect-icon-home.png" class="garden-photo">
+                    <h3>Protect</h3>
+                    <p>Rare plants included in the National Collection are safeguarded from extinction and can help
+                        conservationists restore healthy, diverse populations to nature.
+                    </p>
+                </div>
+                <div class="garden-col">
+                    <img src="Images/educate-icon-home.png" class="garden-photo">
+                    <h3>Educate</h3>
+                    <p>The Garden Revival Academy offers training, tools, and resources to empower individuals and
+                        communities with the knowledge and skills needed to restore and sustain vibrant, healthy
+                        gardens.
+                    </p>
+                </div>
+                <div class="garden-col">
+                    <img src="Images/connect-icon-home.png" class="garden-photo">
+                    <h3>Connect</h3>
+                    <p>At Garden Revival System, we believe in the power of community to nurture, restore, and protect
+                        beautiful gardens. Whether you're a seasoned gardener, a beginner, or simply passionate about
+                        garden conservation, our platform is designed to bring people together.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <!--------------------------------------------campus------------------------------------------------>
+        <section class="campus">
+            <h1>Our Green Hub</h1>
+            <p>The largest of its kind, our Green Hub features vibrant gardens, interactive green spaces, a wellness
+                park,designed to inspire and connect garden lovers. </p>
+            <div class="row">
+                <div class="campus-col">
+                    <img src="images/greenhub1.jpg" height="100%">
+                    <div class="layer">
+                        <h3>The Blossom Haven</h3>
+                    </div>
+                </div>
+                <div class="campus-col">
+                    <img src="images/greenhub2.jpg">
+                    <div class="layer">
+                        <h3>Eco Haven</h3>
+                    </div>
+                </div>
+                <div class="campus-col">
+                    <img src="images/greenhub3.jpg">
+                    <div class="layer">
+                        <h3>The Eden Zone</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="cta">
+            <h1>To<br>Revive Parks, Restore Nature <br>Clean Spaces, Clear Futures</h1>
+            <a href="contact.html" class="hero-btn">CONTACT US</a>
+        </section>
+        <br>
+    </div>
+    <!----------------------------------------------------------footer------------------------------------------------------------>
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Welcome to Garden Revival System, where nature meets innovation. We are dedicated to<br> inspiring and
+            supporting individuals and communities in their journey to restore, protect, and nurture beautiful
+            gardens.<br> With a wealth of resources, expert guidance, and a passionate community, we provide the tools
+            you need to revive and sustain vibrant green spaces. <br>Join us in creating a greener, healthier world—one
+            garden at a time.</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+        <p>Made with <i class="fa fa-heart"></i> by Green Guard</p>
+    </section>
+    </div>
+    <!------------------------------------------------javascript to togal menu start---------------------------------------------------------->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+    
+        function showMenu() {
+            navLinks.style.right = "0px";
+        }
+    
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    
+        // Check if user is authenticated
+        fetch("/check-auth")
+            .then(res => res.json())
+            .then(data => {
+                const authOnlyLinks = document.querySelectorAll(".auth-only");
+                const loginBtns = document.getElementById("auth-buttons");
+                const logoutBtn = document.getElementById("logout-button");
+    
+                if (data.isAuthenticated) {
+                    authOnlyLinks.forEach(link => link.style.display = "inline-block");
+                    loginBtns.style.display = "none";
+                    logoutBtn.style.display = "inline-block";
+                } else {
+                    authOnlyLinks.forEach(link => link.style.display = "none");
+                    loginBtns.style.display = "inline-block";
+                    logoutBtn.style.display = "none";
+                }
+            })
+            .catch(err => console.log("Error checking authentication", err));
+    
+        // Logout function
+        function logout() {
+            fetch("/logout", { method: "POST" })
+                .then(res => {
+                    if (res.ok) {
+                        window.location.href = "index.html";
+                    }
+                })
+                .catch(err => console.log("Error logging out", err));
+        }
+    </script>
+    
+    <!------------------------------------------------javascript to togal menu end---------------------------------------------------------->
+
+</body>
+
+</html>

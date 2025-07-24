@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Garbage Records | Garden Revival System</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="images/myLogo2.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .table-container {
+            max-height: 400px; /* Set table height for scroll */
+            overflow-y: auto;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: #fff;
+            text-align: left;
+        }
+        thead {
+            position: sticky;
+            top: 0;
+            background-color: #4CAF50;
+            color: white;
+            z-index: 100;
+        }
+        th, td {
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔷 HEADER -->
+    <div class="cl1">
+        <section class="sub-header">
+            <nav class="font-awesome">
+                <a href="index.html"><img src="images/mylogo2.png"></a>
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul>
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="live.html">LIVE</a></li>
+                        <li><a href="report.html">REPORT</a></li>
+                        <li><a href="contact.html">CONTACT</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
+            <h1>All Garbage Records</h1>
+        </section>
+
+        <!-- 🚀 GARBAGE DATA TABLE -->
+        <section class="blog-content">
+            <div class="container">
+                <h2>All Garbage Records</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Garbage Type</th>
+                                <th>Weight (kg)</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="data-table">
+                            <tr><td colspan="4">Loading...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 🔷 FOOTER -->
+    <section class="footer">
+        <h4>About Us</h4>
+        <p>Welcome to Garden Revival System, where nature meets innovation...</p>
+        <div class="icons">
+            <i class="fa fa-facebook"></i>
+            <i class="fa fa-twitter"></i>
+            <i class="fa fa-instagram"></i>
+            <i class="fa fa-linkedin"></i>
+        </div>
+        <p>Made with <i class="fa fa-heart"></i> by Green Guard</p>
+    </section>
+
+    <!-- ✅ JavaScript for Menu Toggle -->
+    <script>
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() { navLinks.style.right = "0px"; }
+        function hideMenu() { navLinks.style.right = "-200px"; }
+    </script>
+
+    <!-- ✅ JavaScript to Fetch and Display Garbage Data -->
+    <script>
+        document.addEventListener("DOMContentLoaded", async function () {
+            try {
+                const response = await fetch("/api/garbage-data");
+                const garbageData = await response.json();
+
+                if (garbageData.length === 0) {
+                    document.getElementById("data-table").innerHTML = "<tr><td colspan='4'>No garbage data available.</td></tr>";
+                    return;
+                }
+
+                let tableHTML = "";
+                garbageData.forEach(item => {
+                    const dateTime = new Date(item.timestamp);
+                    const date = dateTime.toISOString().split("T")[0];
+                    const time = dateTime.toLocaleTimeString();
+
+                    tableHTML += `
+                        <tr>
+                            <td>${item.garbage_type}</td>
+                            <td>${parseFloat(item.weight_kg).toFixed(2)}</td>
+                            <td>${date}</td>
+                            <td>${time}</td>
+                        </tr>`;
+                });
+
+                document.getElementById("data-table").innerHTML = tableHTML;
+            } catch (error) {
+                console.error("Error fetching garbage data:", error);
+                document.getElementById("data-table").innerHTML = "<tr><td colspan='4'>Error loading data. Please try again.</td></tr>";
+            }
+        });
+    </script>
+
+</body>
+</html>

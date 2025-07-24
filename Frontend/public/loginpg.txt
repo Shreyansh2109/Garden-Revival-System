@@ -1,0 +1,86 @@
+function validateUsername(x) {
+     
+
+    var pattern = /(^[a-zA-Z]+$)+/;
+
+    var text = x.value;
+    console.log(text);
+
+    validate(pattern, text, x, "Invalid username");
+
+
+
+    if (text.match(pattern)) {
+
+        console.log("success");
+
+    }
+
+    else {
+
+        console.log("fail");
+
+    }
+
+}
+
+function checkPass(x) {
+
+    let pass1 = document.getElementById("password").value;
+
+    console.log(`pass1:${pass1}`);
+
+    let conf = x.value;
+
+    console.log(`conf:${conf}`);
+
+    if (pass1 === conf) {
+
+        x.parentElement.lastElementChild.innerHTML = "";
+
+    }
+
+    else {
+
+        x.parentElement.lastElementChild.innerHTML = " Invalid password ";
+
+    }
+
+    // console.log(`conf:${pass1}`);
+
+    // validate(pass1, conf, x, "Passwords don't match");
+
+}
+
+
+
+function validate(pattern, text, element, errorMessage) {
+
+    let errorElement = document.createElement("div");
+     
+      
+     
+    // errorElement.className = "validation-error";
+     
+      
+     
+     errorElement.innerHTML = errorMessage;
+ 
+     if (text.match(pattern)) {
+ 
+         element.parentElement.lastElementChild.innerHTML = "";
+         console.log("succsess");
+ 
+     }
+ 
+     else {
+ 
+         element.parentElement.lastElementChild.innerHTML = errorMessage;
+         //element.appendChild(errorElement);
+         console.log("fail");
+ 
+     }
+ 
+     errorMessage = "";
+ 
+ }

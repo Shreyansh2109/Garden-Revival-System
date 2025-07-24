@@ -1,0 +1,702 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+}
+/*****************************************Body Header***********************************************/
+.header{
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/index_background.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-actions ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-actions li {
+    margin-left: 10px;
+}
+
+nav {
+    display: flex;
+    padding: 10px 40px;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav img{
+    width: 110px;
+    height: 110px;
+}
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+        color:#fff;
+        text-decoration: none;
+        font-size: 13px;      
+}
+.nav-links ul li ::after{
+    content: '';
+    width: 0%;
+    height:2px;
+    background-color: #36f495;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+.nav-links ul li a:hover::after{
+    width: 100%;
+}
+.tex-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.tex-box h1{
+    font-size: 62px;
+}
+.tex-box p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration:none;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border:1px solid #36f495;
+    background: #36f495;
+    color: #111;
+    transition: 1s;
+}
+/*****************************for iding the x and menu icon of small screan devises*******************/
+.fa.fa-bars{
+    display: none;
+}
+.fa.fa-times {
+    display: none;
+}
+/*****************************This @media is for small screan divices******************************/
+@media(max-width:700px){
+    .tex-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li{
+        display: block;
+    } 
+    .nav-links{
+        position: fixed;
+        background: #36f495;
+        height: 100vh;
+        width: 200px;
+        top:0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    /* ************************for the menu and close icon to be shown on small screan *************************/
+    .fa.fa-bars{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .fa.fa-times{
+        display: block;
+        color: #111;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+    .nav-links ul li a{
+        color: #111;
+    }
+}
+/********************************garden****************************************/
+.garden{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 100px;
+}
+h1{
+    font-size: 36px;
+    font-weight: 800; 
+}
+p{
+    color:#777;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 22px;
+    padding: 10px;
+}
+.row{
+    margin: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.garden-col{
+    flex-basis: 31%;
+    background: #b0ffca;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;   
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.garden-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+.garden-photo{
+    width: 30%;
+    height: 30%;
+}
+/*********************************@media for small devices ******************************/
+@media(max-width:700px){
+    .row{
+        flex-direction: column;
+    }
+}
+/***************************CAMPUS*****************************/
+.campus{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+.campus-col img{
+    width: 100%;
+    display: block;
+}
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+}
+.layer:hover{
+    background: rgba(0,226,0,0.2);
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left:50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;;
+}
+/************************************************facilities************************************/
+.facilities{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 5%;   
+}
+.facilites-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.facilites-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+.facilites-col p{
+    padding: 0;
+}
+.facilites-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.facilites-col:hover img{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+.facilites-col{
+    flex-basis: 31%;
+    background: #b0ffca;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;   
+}
+.facilites-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.3);
+}
+/******************************************testimonials******************************************/
+.testimonials{
+    width: 80%;
+    margin: auto;
+    padding-top: 10px;
+    text-align: center;
+}
+.testimonials-col{
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align:center;
+    background: #b0ffca;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+}
+.testimonials-col img{
+    height: 40px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+.facilites-col p{
+    padding: 0%;
+}
+.facilites-col h3{
+    margin-top: 15px;
+    text-align: left;
+}
+.testimonials-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.3);
+}
+.testimonials .fa{
+    color:#f4d836
+}
+/********************************for small screen divices************************************/
+@media(max-wikdth:700px){
+    .testimonials-col img{
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+}
+/*************************************call to action**********************************************/
+.cta{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(images/calltoaction.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0px;
+}
+.cta h1{
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+/****************@media for small screen divices************/
+@media(max-width:700px){
+    .cta h1{
+        font-size: 24px;
+    }
+}
+/**************************************************footer*****************************************************************/
+.footer{
+    width:100%;
+    text-align: center;
+    padding: 30px,0;
+}
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 800;
+}
+.footer p{
+    font-weight: 600;
+    color:#333;
+}
+.footer .fa{
+    color:#333;
+}
+.icons .fa{
+    color:#333;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+/***********************************about us Page**********************************************************/
+.sub-header{
+    height: 50vh;
+    width: 100%;
+    background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/backgroundabout.jpg);
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+.sub-header h1{
+    margin-bottom: 100px;
+}
+.sub-header p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+}
+.about-us{
+    width: 100%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+    text-align:left;
+    background: #b0ffca;
+    cursor: pointer;
+    display: flex;
+}
+.about-col{
+    flex-basis: 48%;
+    padding: 30px 2px;
+    
+}
+.about-col img{
+    width: 100%;
+}
+.about-col p{
+    padding: 15px 0 25px;
+}
+.green-btn{
+    border:1px solid #b4b4b4;
+    background:#b4b4b4;
+    border-radius: 25px;
+    color:rgba(0, 0, 0, 0.753)
+}
+
+/******************for all  background********************/
+.cl{
+    background: #04ff8ace;
+}
+.cl1{
+    background: #b0ffca;
+}
+/**************blog-content*****************************/
+.blog-content{
+    width: 80%;
+    margin-right:30px;
+    margin-left:30px;
+    padding: 60px 0;
+}
+.blog-left{
+    flex-basis: 65%;
+
+}
+.blog-left img{
+    width: 100%;
+}
+.blog-left h2{
+    color: #000;
+    font-weight: 800;
+    margin: 30px 0;
+}
+.blog-left p{
+    color: #555;
+    padding: 0;
+}
+/*************************** right side blog box start*********************/
+.blog-right{
+    flex-basis: 32%;
+}
+.blog-right h3{
+    background: #04ff8a;
+    color:#000;
+    padding: 7px 0;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.blog-right div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color:#555;
+    padding: 8px;
+    box-sizing: border-box;
+}
+/*******************************right side blog box end ****************************************/
+/*******************************for editing comment box ****************************************/
+.comment-box{
+    border: 1px solid #b0ffca;
+    margin: 50px 0;
+    padding: 10px 20px;
+}
+.comment-box h3{
+    text-align: left;
+}
+.comment-form input,.comment-form textarea{
+    width:100%;
+    padding:10px;
+    margin:15px 0;
+    box-sizing: border-box;
+    border:none;
+    outline: none;
+    background: #c7c7c7;
+}
+.comment-form button{
+    margin: 10px 0;
+}
+/************************end of css content box**************************/
+/************************ for small screen divices**********************/
+@media(max-width: 700px){
+    .sub-header h1{
+        font-size: 24px;
+    }
+}
+/*****************************contact us Page***************************************************/
+.location{
+    width:80%;
+    margin: auto;
+    padding: 80px 0;
+}
+.location iframe{
+    width: 100%;
+}
+.contact-us{
+    width: 80%;
+    margin: auto;
+}
+.contact-col{
+    flex-basis: 48%;
+    margin-bottom: 30px;
+}
+.contact-col div{
+    flex-basis: 48%;
+    margin-bottom: 30px;
+}
+.contact-col div .fa{
+    font-size: 28px;
+    color:#111;
+    margin: 10px;
+    margin-right: 30px;
+}
+.contact-col div p{
+    padding: 0%;
+    color: #333;
+}
+.contact-col h5{
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 400;
+}
+/************************start of form css contact page**********************/
+.contact-col input,.contact-col textarea{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 17px;
+    outline: none;
+    border: 1px solid #ccc;
+    background: #c7c7c7;
+    box-sizing: border-box;
+}
+.green-bo-btn{
+    border:1px solid #b4b4b4;
+    background:#b4b4b4;
+    padding:12px 34px ;
+    border-radius: 25px;
+    color:rgba(0, 0, 0, 0.753);
+    cursor : pointer;
+}
+.green-bo-btn:hover{
+    border:1px solid #36f495;
+    background: #36f495;
+    transition: 1s;
+}
+/************************end of form css contact page**********************/
+/***********************start of librery page*****************************/
+/***********************sub1-header start*********************************/
+.sub1-header{
+    height: 50vh;
+    width: 100%;
+    background-image:linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)),url(images/libbanner2.jpg);
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+}
+.sub1-header h1{
+    margin-bottom: 10px;
+}
+.sub1-header p{
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+}
+.space{
+    flex: 1;
+    text-align: right;
+}
+.space ul li{
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.space ul li a{
+        color:#fff;
+        text-decoration: none;
+        font-size: 13px;      
+}
+/***********************sub1-header end*********************************/
+.lib{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 5%;   
+}
+.lib-col{
+    flex-basis: 31%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.lib-col img{
+    width: 100%;
+    border-radius: 10px;
+}
+.lib-col p{
+    padding: 0;
+}
+.lib-col h3{
+    margin-top: 16px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+.lib-col:hover img{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+.lib-col{
+    flex-basis: 31%;
+    background: #b0ffca;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    transition: 0.5s;   
+}
+.lib-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.3);
+}
+/**************************library slider*************************************/
+.slid{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    width:90%;
+    height: 400px;
+    left:50%;
+    top:50%;
+    bottom: 50%;
+    right: 50%;
+    background-image: url(images/lib1.jpg);
+    background-position: center;
+    background-size: cover;
+    box-shadow: 1px 2px 10px 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    padding: 70px 70px;
+    animation: slider 60s infinite linear;
+}
+#registerBtn{
+    margin-left: 15px;
+}
+/*********for slider animator*****************/
+@keyframes slider{
+    0%{background-image: url(images/lib1.jpg); }
+    20%{background-image: url(images/lib2.jpg) }
+    40%{ background-image: url(images/lib3.jpg)}
+    60%{ background-image: url(images/lib4.jpg)}
+    80%{ background-image: url(images/lib5.jpg)}
+}
+@media(max-width:700px){
+    .slid{
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width:60%;
+        height: 400px;
+        left:50%;
+        top:50%;
+        bottom: 50%;
+        right: 50%;
+        padding: 60px 60px;
+    }
+}
+/*************slider animation end along with slider library*****************************************/
+.cta1{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),url(images/libbanner2.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 1px 2px 10px 10px rgba(0,0,0,0.3);
+    text-align: center;
+    padding: 70px 70px;
+}
+.cta1 h1{
+    color: #fff;
+    margin-bottom: 40px;
+    padding: 0;
+}
+@media(max-width:700px){
+    .cta1{
+        margin: 100px auto;
+        width: 60%;
+        padding: 70px 70px;
+    }  
+}
+/**********************************************end of libary page *****************************************************************/

@@ -1,0 +1,311 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*****************************************Body Header***********************************************/
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/loginback.jpg);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    width: 110px;
+    height: 110px;
+}
+
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-links ul li ::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background-color: #36f495;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+}
+
+.nav-links ul li a:hover::after {
+    width: 100%;
+}
+
+.tex-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.tex-box h1 {
+    font-size: 62px;
+}
+
+.tex-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 25px;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btn:hover {
+    border: 1px solid #36f495;
+    background: #36f495;
+    color: #111;
+    transition: 1s;
+}
+
+/*****************************for iding the x and menu icon of small screan devises*******************/
+.fa.fa-bars {
+    display: none;
+}
+
+.fa.fa-times {
+    display: none;
+}
+
+/*****************************This @media is for small screan divices******************************/
+@media(max-width:700px) {
+    .tex-box h1 {
+        font-size: 20px;
+    }
+
+    .nav-links ul li {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        background: #36f495;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+
+    /* ************************for the menu and close icon to be shown on small screan *************************/
+    .fa.fa-bars {
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .fa.fa-times {
+        display: block;
+        color: #111;
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+
+    .nav-links ul {
+        padding: 30px;
+    }
+
+    .nav-links ul li a {
+        color: #111;
+    }
+}
+
+.space {
+    flex: 1;
+    text-align: right;
+}
+
+.space ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.space ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+/* Reset default margins and paddings */
+body,
+h1,
+h2,
+form {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style the body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+}
+
+/* Style the login container */
+.login-container {
+    background-color: #04ff8ace;
+    border: 1px solid #04ff8ace;
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style headings */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+/* Style labels */
+label {
+    display: block;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.form_text {
+    text-align: center;
+}
+
+.form_link {
+    color: #252c6a;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.form_link:hover {
+    text-decoration: underline;
+}
+
+/**************************for error ******************/
+.error {
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: #cc3333;
+}
+
+.form_input-error {
+    color: #cc3333;
+    border-color: var#cc3333;
+}
+
+/* Style input fields */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form_input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    box-sizing: border-box;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    outline: none;
+    background: #eee;
+    transition: background 0.2s, bordercolor 0.2s;
+}
+
+.form_input:focus {
+    border-color: #009579;
+    background: #fff;
+}
+
+/* Style login button */
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Style button on hover */
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/**************************************************footer*****************************************************************/
+.footer {
+    width: 100%;
+    text-align: center;
+    padding: 30px, 0;
+}
+
+.footer h4 {
+    margin-bottom: 25px;
+    margin-top: 20px;
+    font-weight: 800;
+}
+
+.footer p {
+    font-weight: 600;
+    color: #333;
+}
+
+.footer .fa {
+    color: #333;
+}
+
+.icons .fa {
+    color: #333;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
